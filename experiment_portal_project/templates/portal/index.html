@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head> <title>Experiment Portal</title>
+    </head>
+
+    <body>
+        <h1>Experiment Portal</h1>
+        {% if user.is_authenticated %}
+        Welcome back, {{ user.username }} <br/>
+        <a href="{% url 'logout' %}">Logout</a>
+
+        {% else %}
+            Welcome back to the portal, please <a href="{% url 'login' %}">Login</a>
+            or <a href ="{% url 'register' %}">Register</a> <br/> <br/>
+        {% endif %}
+    </body>
+</html>
